@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, ArrowRight, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Project } from '../types';
-import api from '../services/api';
+import api, { BASE_URL } from '../services/api';
 
 const ProjectDetails: React.FC = () => {
   const { id, category } = useParams<{ id: string; category: string }>();
@@ -115,7 +115,7 @@ const ProjectDetails: React.FC = () => {
         >
           {isVideo(project.main_image) ? (
             <video
-              src={`http://localhost:5000${project.main_image}`}
+              src={`${BASE_URL}${project.main_image}`}
               className="w-full h-full object-cover"
               autoPlay
               loop
@@ -124,7 +124,7 @@ const ProjectDetails: React.FC = () => {
             />
           ) : (
             <img
-              src={`http://localhost:5000${project.main_image}`}
+              src={`${BASE_URL}${project.main_image}`}
               alt={project.title_en}
               className="w-full h-full object-cover"
             />
@@ -151,14 +151,14 @@ const ProjectDetails: React.FC = () => {
                 >
                   {isVideo(img) ? (
                     <video
-                      src={`http://localhost:5000${img}`}
+                      src={`${BASE_URL}${img}`}
                       className="w-full h-full object-cover"
                       muted
                       playsInline
                     />
                   ) : (
                     <img
-                      src={`http://localhost:5000${img}`}
+                      src={`${BASE_URL}${img}`}
                       alt="Gallery"
                       className="w-full h-full object-cover"
                     />
@@ -209,14 +209,14 @@ const ProjectDetails: React.FC = () => {
             <div className="max-w-4xl max-h-[80vh] w-full h-full flex items-center justify-center" onClick={(e) => e.stopPropagation()}>
               {isVideo(allMedia[lightboxIndex]) ? (
                 <video
-                  src={`http://localhost:5000${allMedia[lightboxIndex]}`}
+                  src={`${BASE_URL}${allMedia[lightboxIndex]}`}
                   className="max-w-full max-h-full object-contain rounded-xl"
                   controls
                   autoPlay
                 />
               ) : (
                 <img
-                  src={`http://localhost:5000${allMedia[lightboxIndex]}`}
+                  src={`${BASE_URL}${allMedia[lightboxIndex]}`}
                   alt="Lightbox"
                   className="max-w-full max-h-full object-contain rounded-xl"
                 />

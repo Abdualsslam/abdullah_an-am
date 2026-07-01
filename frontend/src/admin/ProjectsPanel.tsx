@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Project, Category } from '../types';
 import { Plus, Edit2, Trash2, Save, X, Upload, Film, FileImage, ExternalLink } from 'lucide-react';
-import api from '../services/api';
+import api, { BASE_URL } from '../services/api';
 
 const ProjectsPanel: React.FC = () => {
   const { t, language, isRtl } = useLanguage();
@@ -352,9 +352,9 @@ const ProjectsPanel: React.FC = () => {
                 {mainImage && (
                   <div className="w-full md:w-48 h-32 rounded-xl overflow-hidden bg-white/5 border border-white/10 relative">
                     {isVideo(mainImage) ? (
-                      <video src={`http://localhost:5000${mainImage}`} className="w-full h-full object-cover" />
+                      <video src={`${BASE_URL}${mainImage}`} className="w-full h-full object-cover" />
                     ) : (
-                      <img src={`http://localhost:5000${mainImage}`} alt="Cover" className="w-full h-full object-cover" />
+                      <img src={`${BASE_URL}${mainImage}`} alt="Cover" className="w-full h-full object-cover" />
                     )}
                     <button
                       type="button"
@@ -394,9 +394,9 @@ const ProjectsPanel: React.FC = () => {
                     {images.map((img, idx) => (
                       <div key={idx} className="h-24 rounded-xl overflow-hidden bg-white/5 border border-white/10 relative">
                         {isVideo(img) ? (
-                          <video src={`http://localhost:5000${img}`} className="w-full h-full object-cover" />
+                          <video src={`${BASE_URL}${img}`} className="w-full h-full object-cover" />
                         ) : (
-                          <img src={`http://localhost:5000${img}`} alt="Gallery" className="w-full h-full object-cover" />
+                          <img src={`${BASE_URL}${img}`} alt="Gallery" className="w-full h-full object-cover" />
                         )}
                         <button
                           type="button"
@@ -461,7 +461,7 @@ const ProjectsPanel: React.FC = () => {
                                 <Film className="w-5 h-5" />
                               </div>
                             ) : (
-                              <img src={`http://localhost:5000${p.main_image}`} className="w-full h-full object-cover" />
+                              <img src={`${BASE_URL}${p.main_image}`} className="w-full h-full object-cover" />
                             )}
                           </div>
                           <div>
