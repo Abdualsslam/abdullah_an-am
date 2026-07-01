@@ -4,6 +4,9 @@ type Language = 'ar' | 'en';
 
 type TranslationKey =
   | 'home'
+  | 'brand'
+  | 'companyProfile'
+  | 'socialMedia'
   | 'portfolio'
   | 'work'
   | 'contact'
@@ -53,6 +56,9 @@ type TranslationKey =
 const translations: Record<Language, Record<TranslationKey, string>> = {
   en: {
     home: 'Home',
+    brand: 'Branding & Logos',
+    companyProfile: 'Company Profiles',
+    socialMedia: 'Social Media Designs',
     portfolio: 'Portfolio',
     work: 'Contact',
     contact: 'Contact',
@@ -101,6 +107,9 @@ const translations: Record<Language, Record<TranslationKey, string>> = {
   },
   ar: {
     home: 'الرئيسية',
+    brand: 'الهويات والشعارات',
+    companyProfile: 'ملفات الشركات',
+    socialMedia: 'تصاميم السوشيال ميديا',
     portfolio: 'معرض الأعمال',
     work: 'تواصل',
     contact: 'اتصال',

@@ -42,7 +42,7 @@ export const updateCategory = async (req: Request, res: Response) => {
   try {
     const category = await Category.findById(id);
     if (!category) {
-      return res.status(444).json({ message: 'Category not found' });
+      return res.status(404).json({ message: 'Category not found' });
     }
 
     // If key is changing, we should verify uniqueness

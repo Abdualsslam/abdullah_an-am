@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Project, Category } from '../types';
-import api from '../services/api';
+import api, { BASE_URL } from '../services/api';
 
 const Works: React.FC = () => {
   const { category } = useParams<{ category: string }>();
@@ -114,7 +114,7 @@ const Works: React.FC = () => {
               >
                 {isVideo(project.main_image) ? (
                   <video
-                    src={`http://localhost:5000${project.main_image}`}
+                    src={`${BASE_URL}${project.main_image}`}
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     autoPlay
                     loop
@@ -124,7 +124,7 @@ const Works: React.FC = () => {
                 ) : (
                   <div
                     className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                    style={{ backgroundImage: `url(http://localhost:5000${project.main_image})` }}
+                    style={{ backgroundImage: `url(${BASE_URL}${project.main_image})` }}
                   />
                 )}
                 

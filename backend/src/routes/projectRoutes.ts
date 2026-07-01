@@ -6,6 +6,7 @@ const router = Router();
 
 router.get('/', getProjects);
 router.get('/category/:category', getProjectsByCategory);
+router.get('/single/:id', getProjectById);
 router.get('/:id', getProjectById);
 
 router.post('/', protect, createProject);
