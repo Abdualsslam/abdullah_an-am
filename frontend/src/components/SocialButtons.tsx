@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { MessageCircle, Instagram, ArrowUp } from 'lucide-react';
+import { LuMessageCircle as MessageCircle, LuArrowUp as ArrowUp } from 'react-icons/lu';
+import { FaInstagram } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
 import api from '../services/api';
 import type { SiteSettings } from '../types';
@@ -73,7 +74,7 @@ const SocialButtons: React.FC = () => {
                 className="relative z-10 p-2.5 text-neutral-300 hover:text-[#E1306C] hover:bg-white/10 rounded-full transition-all duration-300"
                 aria-label="Instagram"
               >
-                <Instagram className="w-5 h-5 stroke-[1.5]" />
+                <FaInstagram className="w-5 h-5" />
               </a>
             </div>
 

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import type { Category } from '../types';
-import { Plus, Edit2, Trash2, Save, ArrowUp, ArrowDown } from 'lucide-react';
+import { LuPlus as Plus, LuTrash2 as Trash2, LuSave as Save, LuArrowUp as ArrowUp, LuArrowDown as ArrowDown } from 'react-icons/lu';
+import { FiEdit2 as Edit2 } from 'react-icons/fi';
 import api from '../services/api';
 
 const CategoriesPanel: React.FC = () => {

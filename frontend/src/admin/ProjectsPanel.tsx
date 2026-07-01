@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import type { Project, Category } from '../types';
-import { Plus, Edit2, X, Trash2, Save, Upload, Film, ExternalLink } from 'lucide-react';
+import { LuPlus as Plus, LuX as X, LuTrash2 as Trash2, LuSave as Save, LuUpload as Upload, LuFilm as Film, LuExternalLink as ExternalLink } from 'react-icons/lu';
+import { FiEdit2 as Edit2 } from 'react-icons/fi';
 import api, { BASE_URL } from '../services/api';
 
 const ProjectsPanel: React.FC = () => {

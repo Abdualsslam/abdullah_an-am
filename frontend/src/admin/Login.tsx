@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { useLanguage } from '../contexts/LanguageContext';
-import { Lock, User, KeyRound } from 'lucide-react';
+import { LuLock as Lock, LuUser as User, LuKeyRound as KeyRound } from 'react-icons/lu';
 import api from '../services/api';
 
 const Login: React.FC = () => {

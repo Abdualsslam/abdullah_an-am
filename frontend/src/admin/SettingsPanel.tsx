@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import type { SiteSettings } from '../types';
-import { Save } from 'lucide-react';
+import { LuSave as Save } from 'react-icons/lu';
 import api from '../services/api';
 
 const SettingsPanel: React.FC = () => {

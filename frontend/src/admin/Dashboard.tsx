@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { useLanguage } from '../contexts/LanguageContext';
-import { LayoutDashboard, FolderKanban, FileSpreadsheet, Settings, LogOut, BarChart3 } from 'lucide-react';
+import { LuLayoutDashboard as LayoutDashboard, LuFolderKanban as FolderKanban, LuFileSpreadsheet as FileSpreadsheet, LuSettings as Settings, LuLogOut as LogOut } from 'react-icons/lu';
+import { FiBarChart2 as BarChart3 } from 'react-icons/fi';
 
 // Subcomponents (we will create these files next)
 import AnalyticsPanel from './AnalyticsPanel';

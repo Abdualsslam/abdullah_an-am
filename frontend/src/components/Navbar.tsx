@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { Menu, X, Home, Briefcase, Globe, LayoutDashboard } from 'lucide-react';
+import { LuMenu as Menu, LuX as X, LuBriefcase as Briefcase, LuGlobe as Globe, LuLayoutDashboard as LayoutDashboard } from 'react-icons/lu';
+import { FiHome as Home } from 'react-icons/fi';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useAuth } from '../contexts/AuthContext';

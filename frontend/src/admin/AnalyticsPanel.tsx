@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { BarChart3, Users, Image, FolderOpen } from 'lucide-react';
+import { LuUsers as Users, LuImage as Image, LuFolderOpen as FolderOpen } from 'react-icons/lu';
+import { FiBarChart2 as BarChart3 } from 'react-icons/fi';
 import { useLanguage } from '../contexts/LanguageContext';
 import type { AnalyticsStats } from '../types';
 import api from '../services/api';

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { MessageCircle, ArrowRight, ArrowLeft } from 'lucide-react';
-import * as LucideIcons from 'lucide-react';
+import { LuMessageCircle as MessageCircle, LuArrowRight as ArrowRight, LuArrowLeft as ArrowLeft } from 'react-icons/lu';
+import * as LucideIcons from 'react-icons/lu';
 import { useLanguage } from '../contexts/LanguageContext';
 import type { Category, SiteSettings } from '../types';
 import api from '../services/api';
@@ -49,12 +49,13 @@ const Home: React.FC = () => {
 
   // Helper to render Lucide icons dynamically from name
   const renderIcon = (iconName: string) => {
-    const IconComponent = (LucideIcons as any)[iconName];
+    const luIconName = iconName.startsWith('Lu') ? iconName : `Lu${iconName}`;
+    const IconComponent = (LucideIcons as any)[luIconName];
     if (IconComponent) {
       return <IconComponent className="w-8 h-8 text-neutral-300 group-hover:text-white transition-colors relative z-10" />;
     }
     // Fallback icon
-    return <LucideIcons.Briefcase className="w-8 h-8 text-neutral-300 group-hover:text-white transition-colors relative z-10" />;
+    return <LucideIcons.LuBriefcase className="w-8 h-8 text-neutral-300 group-hover:text-white transition-colors relative z-10" />;
   };
 
   return (

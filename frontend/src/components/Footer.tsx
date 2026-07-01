@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { MessageCircle, Instagram } from 'lucide-react';
+import { LuMessageCircle as MessageCircle } from 'react-icons/lu';
+import { FaInstagram } from 'react-icons/fa';
 import api from '../services/api';
 import type { SiteSettings } from '../types';
 
@@ -51,7 +52,7 @@ const Footer: React.FC = () => {
           className="group flex items-center justify-center p-3 rounded-full bg-white/5 hover:bg-white/10 transition-all duration-300"
           aria-label="Instagram"
         >
-          <Instagram className="w-6 h-6 text-neutral-400 group-hover:text-white transition-colors" />
+          <FaInstagram className="w-6 h-6 text-neutral-400 group-hover:text-white transition-colors" />
         </a>
       </div>
     </footer>
