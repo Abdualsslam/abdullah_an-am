@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { MessageCircle, ArrowRight, ArrowLeft } from 'lucide-react';
 import * as LucideIcons from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
-import { Category, SiteSettings } from '../types';
+import type { Category, SiteSettings } from '../types';
 import api from '../services/api';
 import { useNavigate } from 'react-router-dom';
 

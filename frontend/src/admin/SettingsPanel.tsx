@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
-import { SiteSettings } from '../types';
+import type { SiteSettings } from '../types';
 import { Save } from 'lucide-react';
 import api from '../services/api';
 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
-import { Project, Category } from '../types';
-import { Plus, Edit2, Trash2, Save, X, Upload, Film, FileImage, ExternalLink } from 'lucide-react';
+import type { Project, Category } from '../types';
+import { Plus, Edit2, X, Trash2, Save, Upload, Film, ExternalLink } from 'lucide-react';
 import api, { BASE_URL } from '../services/api';
 
 const ProjectsPanel: React.FC = () => {
@@ -204,7 +204,7 @@ const ProjectsPanel: React.FC = () => {
             {isRtl ? 'إدارة وتعديل مشاريع معرض الأعمال' : 'Manage and update your portfolio projects'}
           </p>
         </div>
-        
+
         {!isEditing && (
           <div className="flex gap-3 items-center">
             {/* Filter Category */}
@@ -347,7 +347,7 @@ const ProjectsPanel: React.FC = () => {
                     />
                   </label>
                 </div>
-                
+
                 {/* Preview Box */}
                 {mainImage && (
                   <div className="w-full md:w-48 h-32 rounded-xl overflow-hidden bg-white/5 border border-white/10 relative">
@@ -371,7 +371,7 @@ const ProjectsPanel: React.FC = () => {
             {/* Gallery Upload */}
             <div className="bg-white/[0.01] border border-dashed border-white/10 p-6 rounded-2xl">
               <label className="text-sm font-medium text-neutral-300 block mb-4">{t('additionalImages')}</label>
-              
+
               <div className="space-y-6">
                 <label className="flex flex-col items-center justify-center border border-dashed border-white/20 hover:border-white/40 h-24 rounded-xl cursor-pointer transition-colors bg-white/[0.01] gap-1">
                   <Upload className="w-5 h-5 text-neutral-400" />

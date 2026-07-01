@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { useLanguage } from '../contexts/LanguageContext';
-import { LayoutDashboard, FolderKanban, FileSpreadsheet, Settings, LogOut, BarChart3, Users, Image, FolderOpen } from 'lucide-react';
-import api from '../services/api';
+import { LayoutDashboard, FolderKanban, FileSpreadsheet, Settings, LogOut, BarChart3 } from 'lucide-react';
 
 // Subcomponents (we will create these files next)
 import AnalyticsPanel from './AnalyticsPanel';
@@ -89,11 +88,10 @@ const Dashboard: React.FC = () => {
                 <button
                   key={item.id}
                   onClick={() => setActiveTab(item.id as ActiveTab)}
-                  className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-colors whitespace-nowrap cursor-pointer ${
-                    isActive
+                  className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-colors whitespace-nowrap cursor-pointer ${isActive
                       ? 'bg-white text-black'
                       : 'text-neutral-400 hover:text-white hover:bg-white/5'
-                  }`}
+                    }`}
                 >
                   <Icon className="w-5 h-5 stroke-[1.5]" />
                   <span>{item.label}</span>

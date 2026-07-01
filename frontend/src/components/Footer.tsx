@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { MessageCircle, Instagram } from 'lucide-react';
 import api from '../services/api';
-import { SiteSettings } from '../types';
+import type { SiteSettings } from '../types';
 
 const Footer: React.FC = () => {
   const location = useLocation();

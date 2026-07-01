@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
-import { Project, Category } from '../types';
+import type { Project, Category } from '../types';
 import api, { BASE_URL } from '../services/api';
 
 const Works: React.FC = () => {

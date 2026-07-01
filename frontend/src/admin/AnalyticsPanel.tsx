@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BarChart3, Users, Image, FolderOpen } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
-import { AnalyticsStats } from '../types';
+import type { AnalyticsStats } from '../types';
 import api from '../services/api';
 
 const AnalyticsPanel: React.FC = () => {
@@ -70,7 +70,7 @@ const AnalyticsPanel: React.FC = () => {
       <div className="grid grid-cols-1 gap-6">
         <div className="bg-[#0a0a0a] border border-white/10 p-6 rounded-2xl shadow-lg space-y-6">
           <h2 className="text-lg font-bold text-white border-b border-white/10 pb-3">{t('viewsByPath')}</h2>
-          
+
           <div className="space-y-4">
             {stats.viewsByPath.map((item, idx) => {
               // Calculate percent for progress bar
@@ -92,7 +92,7 @@ const AnalyticsPanel: React.FC = () => {
                 </div>
               );
             })}
-            
+
             {stats.viewsByPath.length === 0 && (
               <div className="text-center text-neutral-500 py-4">
                 {isRtl ? 'لا توجد بيانات زيارات مسجلة بعد.' : 'No page view data recorded yet.'}

@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { Menu, X, Home, Briefcase, Settings, Globe, LayoutDashboard } from 'lucide-react';
+import { Menu, X, Home, Briefcase, Globe, LayoutDashboard } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useAuth } from '../contexts/AuthContext';
-import { Category } from '../types';
+import type { Category } from '../types';
 import api from '../services/api';
 
 const Navbar: React.FC = () => {
@@ -166,15 +166,17 @@ const Navbar: React.FC = () => {
 
                 <div className="h-px bg-white/10 my-1 w-full" />
 
-                <button
-                  onClick={() => handleNavClick('/admin')}
-                  className="w-full flex items-center gap-3 p-3 rounded-xl hover:bg-white/5 transition-colors text-start relative overflow-hidden group cursor-pointer"
-                >
-                  <LayoutDashboard className="w-5 h-5 text-neutral-400 group-hover:text-white transition-colors" />
-                  <span className="text-sm font-medium tracking-wide text-white/90 group-hover:text-white transition-colors">
-                    {t('dashboard')}
-                  </span>
-                </button>
+                {isAuthenticated && (
+                  <button
+                    onClick={() => handleNavClick('/admin')}
+                    className="w-full flex items-center gap-3 p-3 rounded-xl hover:bg-white/5 transition-colors text-start relative overflow-hidden group cursor-pointer"
+                  >
+                    <LayoutDashboard className="w-5 h-5 text-neutral-400 group-hover:text-white transition-colors" />
+                    <span className="text-sm font-medium tracking-wide text-white/90 group-hover:text-white transition-colors">
+                      {t('dashboard')}
+                    </span>
+                  </button>
+                )}
 
                 <button
                   onClick={() => {

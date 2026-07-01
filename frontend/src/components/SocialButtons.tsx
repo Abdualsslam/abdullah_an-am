@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { MessageCircle, Instagram, ArrowUp } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import api from '../services/api';
-import { SiteSettings } from '../types';
+import type { SiteSettings } from '../types';
 
 const SocialButtons: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);

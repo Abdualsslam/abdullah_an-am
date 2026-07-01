@@ -1,25 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
-import { Category } from '../types';
-import { Plus, Edit2, Trash2, Save, X, ArrowUp, ArrowDown } from 'lucide-react';
+import type { Category } from '../types';
+import { Plus, Edit2, Trash2, Save, ArrowUp, ArrowDown } from 'lucide-react';
 import api from '../services/api';
 
 const CategoriesPanel: React.FC = () => {
-  const { t, language, isRtl } = useLanguage();
+  const { t, isRtl } = useLanguage();
   const [categories, setCategories] = useState<Category[]>([]);
   const [loading, setLoading] = useState(true);
-  
+
   // Form states
   const [isEditing, setIsEditing] = useState(false);
   const [editId, setEditId] = useState<string | null>(null);
-  
+
   const [nameAr, setNameAr] = useState('');
   const [nameEn, setNameEn] = useState('');
   const [key, setKey] = useState('');
   const [icon, setIcon] = useState('Briefcase');
   const [href, setHref] = useState('');
   const [order, setOrder] = useState(0);
-  
+
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
 
@@ -104,8 +104,8 @@ const CategoriesPanel: React.FC = () => {
   };
 
   const handleDelete = async (id: string) => {
-    if (!window.confirm(isRtl 
-      ? 'هل أنت متأكد من حذف هذا القسم؟ سيتم حذف جميع المشاريع التابعة له أيضاً!' 
+    if (!window.confirm(isRtl
+      ? 'هل أنت متأكد من حذف هذا القسم؟ سيتم حذف جميع المشاريع التابعة له أيضاً!'
       : 'Are you sure you want to delete this category? All projects under this category will also be deleted!'
     )) return;
 
@@ -121,9 +121,9 @@ const CategoriesPanel: React.FC = () => {
   const handleMove = async (index: number, direction: 'up' | 'down') => {
     const newCats = [...categories];
     const targetIdx = direction === 'up' ? index - 1 : index + 1;
-    
+
     if (targetIdx < 0 || targetIdx >= newCats.length) return;
-    
+
     // Swap order property
     const tempOrder = newCats[index].order;
     newCats[index].order = newCats[targetIdx].order;
