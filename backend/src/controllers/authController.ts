@@ -68,3 +68,57 @@ export const checkSetup = async (req: Request, res: Response) => {
     res.status(500).json({ message: 'Server error', error });
   }
 };
+
+// Change admin credentials (username and/or password)
+export const changeCredentials = async (req: Request, res: Response) => {
+  const { currentPassword, newUsername, newPassword } = req.body;
+  const adminId = (req as any).adminId;
+
+  if (!currentPassword) {
+    return res.status(400).json({ message: 'Current password is required' });
+  }
+
+  if (!newUsername && !newPassword) {
+    return res.status(400).json({ message: 'Provide a new username or new password' });
+  }
+
+  try {
+    const admin = await Admin.findById(adminId);
+    if (!admin) {
+      return res.status(404).json({ message: 'Admin not found' });
+    }
+
+    // Verify current password
+    const isMatch = await bcrypt.compare(currentPassword, admin.passwordHash);
+    if (!isMatch) {
+      return res.status(401).json({ message: 'Current password is incorrect' });
+    }
+
+    // Update username if provided
+    if (newUsername && newUsername !== admin.username) {
+      // Check if the new username is already taken by another admin
+      const existingAdmin = await Admin.findOne({ username: newUsername, _id: { $ne: adminId } });
+      if (existingAdmin) {
+        return res.status(409).json({ message: 'Username already taken' });
+      }
+      admin.username = newUsername;
+    }
+
+    // Update password if provided
+    if (newPassword) {
+      const salt = await bcrypt.genSalt(10);
+      admin.passwordHash = await bcrypt.hash(newPassword, salt);
+    }
+
+    await admin.save();
+
+    // Generate a new token with the updated info
+    res.json({
+      message: 'Credentials updated successfully',
+      token: generateToken(admin._id.toString()),
+      username: admin.username
+    });
+  } catch (error) {
+    res.status(500).json({ message: 'Server error', error });
+  }
+};
