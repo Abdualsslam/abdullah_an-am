@@ -1,10 +1,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800&display=swap');
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'Handicrafts';
+  src: url('./assets/fonts/TheYearofHandicrafts-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Handicrafts';
+  src: url('./assets/fonts/TheYearofHandicrafts-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Handicrafts';
+  src: url('./assets/fonts/TheYearofHandicrafts-SemiBold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Handicrafts';
+  src: url('./assets/fonts/TheYearofHandicrafts-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Handicrafts';
+  src: url('./assets/fonts/TheYearofHandicrafts-Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+}
+
 @theme {
-  --font-sans: 'Cairo', 'Century Gothic', ui-sans-serif, system-ui, sans-serif;
-  --font-serif: 'Cairo', 'Century Gothic', ui-serif, Georgia, serif;
-  --font-space: 'Cairo', 'Century Gothic', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Handicrafts', 'Cairo', 'Century Gothic', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'Handicrafts', 'Cairo', 'Century Gothic', ui-serif, Georgia, serif;
+  --font-space: 'Handicrafts', 'Cairo', 'Century Gothic', ui-sans-serif, system-ui, sans-serif;
 }
 
 :root {
@@ -14,7 +45,7 @@
 body {
   background-color: #050505;
   color: #ffffff;
-  font-family: 'Cairo', 'Century Gothic', ui-sans-serif, system-ui, sans-serif;
+  font-family: 'Handicrafts', 'Cairo', 'Century Gothic', ui-sans-serif, system-ui, sans-serif;
   overflow-x: hidden;
   margin: 0;
   padding: 0;
