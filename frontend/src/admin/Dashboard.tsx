@@ -61,7 +61,7 @@ const Dashboard: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row min-h-screen bg-[#050505] text-white" dir={isRtl ? 'rtl' : 'ltr'}>
+    <div className="flex flex-col md:flex-row min-h-screen bg-[#050505] text-white pt-20" dir={isRtl ? 'rtl' : 'ltr'}>
       {/* Sidebar Navigation */}
       <aside className="w-full md:w-64 bg-[#0a0a0a] border-b md:border-b-0 md:border-r border-white/10 p-6 flex flex-col justify-between">
         <div className="space-y-8">

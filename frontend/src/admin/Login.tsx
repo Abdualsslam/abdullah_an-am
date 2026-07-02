@@ -50,7 +50,7 @@ const Login: React.FC = () => {
   };
 
   return (
-    <div className="flex-grow flex items-center justify-center min-h-[80vh] px-6" dir={isRtl ? 'rtl' : 'ltr'}>
+    <div className="flex-grow flex items-center justify-center min-h-[80vh] px-6 pt-20" dir={isRtl ? 'rtl' : 'ltr'}>
       <div className="w-full max-w-md bg-[#0a0a0a] border border-white/10 p-8 rounded-3xl shadow-2xl relative overflow-hidden">
         {/* Decorative subtle top gradient */}
         <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
