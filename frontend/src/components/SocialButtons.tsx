@@ -8,10 +8,10 @@ import type { SiteSettings } from '../types';
 const SocialButtons: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [settings, setSettings] = useState<SiteSettings>({
-    whatsapp: '00972592308524',
+    whatsapp: '967774905790',
     instagram: 'ahmed.designer19',
-    name_ar: 'أحمد',
-    name_en: 'Ahmed',
+    name_ar: 'عبدالله',
+    name_en: 'Abdullah',
     title_ar: 'مصمم جرافيك',
     title_en: 'Graphic Designer'
   });
@@ -56,7 +56,7 @@ const SocialButtons: React.FC = () => {
               <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-transparent pointer-events-none" />
               
               <a
-                href={`https://wa.me/${settings.whatsapp}`}
+                href={`https://wa.me/${settings.whatsapp.replace(/\D/g, '')}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="relative z-10 p-2.5 text-neutral-300 hover:text-[#25D366] hover:bg-white/10 rounded-full transition-all duration-300"

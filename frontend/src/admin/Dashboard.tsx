@@ -75,7 +75,7 @@ const Dashboard: React.FC = () => {
                 {isRtl ? 'لوحة التحكم' : 'Admin Panel'}
               </h2>
               <span className="text-xs text-neutral-500">
-                {isRtl ? 'أهلاً بك يا أحمد' : "Welcome Ahmed"}
+                {isRtl ? 'أهلاً بك يا عبدالله' : "Welcome Abdullah"}
               </span>
             </div>
           </div>

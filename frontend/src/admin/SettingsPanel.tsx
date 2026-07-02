@@ -87,7 +87,7 @@ const SettingsPanel: React.FC = () => {
                 value={settings.name_ar}
                 onChange={handleChange}
                 className="w-full bg-white/[0.02] border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-white/30 transition-colors"
-                placeholder="أحمد"
+                placeholder="عبدالله"
               />
             </div>
 
@@ -100,7 +100,7 @@ const SettingsPanel: React.FC = () => {
                 value={settings.name_en}
                 onChange={handleChange}
                 className="w-full bg-white/[0.02] border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-white/30 transition-colors"
-                placeholder="Ahmed"
+                placeholder="Abdullah"
               />
             </div>
 
@@ -139,7 +139,7 @@ const SettingsPanel: React.FC = () => {
                 value={settings.whatsapp}
                 onChange={handleChange}
                 className="w-full bg-white/[0.02] border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-white/30 transition-colors"
-                placeholder="00972592308524"
+                placeholder="967774905790"
               />
             </div>
 

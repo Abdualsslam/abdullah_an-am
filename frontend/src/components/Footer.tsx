@@ -8,10 +8,10 @@ import type { SiteSettings } from '../types';
 const Footer: React.FC = () => {
   const location = useLocation();
   const [settings, setSettings] = useState<SiteSettings>({
-    whatsapp: '00972592308524',
+    whatsapp: '967774905790',
     instagram: 'ahmed.designer19',
-    name_ar: 'أحمد',
-    name_en: 'Ahmed',
+    name_ar: 'عبدالله',
+    name_en: 'Abdullah',
     title_ar: 'مصمم جرافيك',
     title_en: 'Graphic Designer'
   });
@@ -37,7 +37,7 @@ const Footer: React.FC = () => {
     <footer className="w-full py-8 mt-auto border-t border-white/10 relative z-20">
       <div className="max-w-4xl mx-auto px-6 flex flex-row items-center justify-center gap-6 text-white/70">
         <a
-          href={`https://wa.me/${settings.whatsapp}`}
+          href={`https://wa.me/${settings.whatsapp.replace(/\D/g, '')}`}
           target="_blank"
           rel="noopener noreferrer"
           className="group flex items-center justify-center p-3 rounded-full bg-white/5 hover:bg-white/10 transition-all duration-300"

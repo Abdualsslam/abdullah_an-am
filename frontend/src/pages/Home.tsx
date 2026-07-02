@@ -13,10 +13,10 @@ const Home: React.FC = () => {
   const [categories, setCategories] = useState<Category[]>([]);
   const [loading, setLoading] = useState(true);
   const [settings, setSettings] = useState<SiteSettings>({
-    whatsapp: '00972592308524',
+    whatsapp: '967774905790',
     instagram: 'ahmed.designer19',
-    name_ar: 'أحمد',
-    name_en: 'Ahmed',
+    name_ar: 'عبدالله',
+    name_en: 'Abdullah',
     title_ar: 'مصمم جرافيك',
     title_en: 'Graphic Designer'
   });
@@ -157,7 +157,7 @@ const Home: React.FC = () => {
             className="flex flex-col sm:flex-row items-center gap-4 mt-12 w-full sm:w-auto"
           >
             <a
-              href={`https://wa.me/${settings.whatsapp}`}
+              href={`https://wa.me/${settings.whatsapp.replace(/\D/g, '')}`}
               target="_blank"
               rel="noopener noreferrer"
               className="group relative flex items-center justify-center gap-3 px-10 py-4 bg-white text-black rounded-full font-semibold hover:scale-105 active:scale-95 transition-all duration-300 w-full sm:w-auto overflow-hidden cursor-pointer"

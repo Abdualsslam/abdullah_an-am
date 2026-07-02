@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import type { Project, Category } from '../types';
 import { LuPlus as Plus, LuX as X, LuTrash2 as Trash2, LuSave as Save, LuUpload as Upload, LuFilm as Film, LuExternalLink as ExternalLink } from 'react-icons/lu';
@@ -32,7 +32,7 @@ const ProjectsPanel: React.FC = () => {
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
 
-  const fetchData = async () => {
+  const fetchData = useCallback(async () => {
     setLoading(true);
     try {
       const [projectsRes, categoriesRes] = await Promise.all([
@@ -41,19 +41,19 @@ const ProjectsPanel: React.FC = () => {
       ]);
       setProjects(projectsRes.data);
       setCategories(categoriesRes.data);
-      if (categoriesRes.data.length > 0 && !category) {
-        setCategory(categoriesRes.data[0].key);
+      if (categoriesRes.data.length > 0) {
+        setCategory(prev => prev || categoriesRes.data[0].key);
       }
     } catch (err) {
       console.error('Error fetching projects data:', err);
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [fetchData]);
 
   const resetForm = () => {
     setTitleAr('');

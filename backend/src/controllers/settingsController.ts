@@ -12,10 +12,10 @@ export const getSettings = async (req: Request, res: Response) => {
 
     // Provide default settings if they don't exist yet
     const defaults = {
-      whatsapp: '00972592308524',
+      whatsapp: '967774905790',
       instagram: 'ahmed.designer19',
-      name_ar: 'أحمد',
-      name_en: 'Ahmed',
+      name_ar: 'عبدالله',
+      name_en: 'Abdullah',
       title_ar: 'مصمم جرافيك',
       title_en: 'Graphic Designer',
       portfolioCategoriesOrder: ['brand', 'profile', 'social']
